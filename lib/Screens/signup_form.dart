@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import '../Comm/genTextFormField.dart';
 import 'login_form.dart';
 
 class SignupForm extends StatefulWidget {
@@ -45,257 +45,80 @@ class _SignupFormState extends State<SignupForm> {
                     fontSize: 25.0
                 ) ,
               ),
+
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
 
               // First name field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.person
-                    ),
-                    hintText: "First Name *",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                  icon: Icons.person,
+                  hintName: "First Name *",
+                  controller: TextEditingController()
               ),
+
               const SizedBox(
                 height: 20,
               ),
 
               // Last name field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.person_rounded
-                    ),
-                    hintText: "Last Name *",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                icon: Icons.person,
+                hintName: "Last Name *",
+                controller: TextEditingController()
               ),
+
               const SizedBox(
                 height: 20,
               ),
 
               // Email address field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.alternate_email
-                    ),
-                    hintText: "Email address *",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                icon: Icons.alternate_email,
+                hintName: "Email Address *",
+                controller: TextEditingController(),
+                textInputType: TextInputType.emailAddress,
               ),
+
               const SizedBox(
                 height: 20,
               ),
 
               // Password field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.lock_outline_rounded
-                    ),
-                    hintText: "Password *",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                icon: Icons.lock_outline_rounded,
+                hintName: "Password *",
+                controller: TextEditingController(),
+                textInputType: TextInputType.visiblePassword,
               ),
+
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
 
               // Repeat Password field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.password
-                    ),
-                    hintText: "Re-type Password *",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 30,
+              GetTextFormField(
+                icon: Icons.password,
+                hintName: "Repeat Password *",
+                controller: TextEditingController(),
+                textInputType: TextInputType.visiblePassword,
               ),
 
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Phone Number
+              GetTextFormField(
+                icon: Icons.phone,
+                hintName: "Phone Number",
+                controller: TextEditingController(),
+                textInputType: TextInputType.number,
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
 
               // text for obligatory
               Container(

@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hk_store/Screens/signup_form.dart';
+
+import '../Comm/genTextFormField.dart';
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
   @override
@@ -46,103 +47,30 @@ class _LoginFormState extends State<LoginForm> {
               const SizedBox(
                 height: 50,
               ),
+
               // Email address field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.alternate_email_rounded
-                    ),
-                    hintText: "Email Address",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                icon: Icons.person,
+                hintName: "Email Address",
+                controller: TextEditingController()
               ),
+
               const SizedBox(
                 height: 20,
               ),
+
               // Password field
-              Container(
-                margin: const EdgeInsets.only(
-                    top: 10.0,
-                    left: 20,
-                    right: 20
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)
-                      ),
-                      borderSide: BorderSide(color: Colors.lightGreen
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                        Icons.lock
-                    ),
-                    hintText: "Password",
-                    fillColor: CupertinoColors.systemGrey6,
-                    filled: true,
-                  ),
-                ),
+              GetTextFormField(
+                isObscureText: true,
+                icon: Icons.person,
+                hintName: "Password",
+                controller: TextEditingController()
               ),
+
               const SizedBox(
                 height: 30,
               ),
+
               // Login button
               Container(
                 margin: const EdgeInsets.all(30.0),
@@ -181,7 +109,7 @@ class _LoginFormState extends State<LoginForm> {
                     TextButton(
                       onPressed:() {
                         Navigator.push(context,
-                            MaterialPageRoute(builder:(_) => SignupForm()));
+                            MaterialPageRoute(builder:(_) => const SignupForm()));
                       },
                       child: const Text("Signup here"),
                     ),
